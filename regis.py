@@ -13,7 +13,7 @@ load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 print(f"BOT TOKEN LOADED: {BOT_TOKEN[:10]}...")
-REGISTER_URL = "https://viralmulu.xyz/register?voucher=x32G"
+REGISTER_URL = "https:/babehku9.xyz/register?voucher=1Ho3"
 
 SUCCESS_TEXT = "Pendaftaran Berhasil"
 DUPLICATE_PHONE_TEXT = "No. Handphone telah dipakai"
@@ -58,7 +58,7 @@ async def add_rekening(page, data):
 
     # langsung masuk halaman deposit
     await page.goto(
-        "https://viralmulu.xyz/account/transaction?tab=deposit",
+        "https://babehku9.xyz/account/transaction?tab=deposit",
         timeout=60000
     )
 
@@ -142,7 +142,7 @@ async def add_rekening(page, data):
     return True
 
 def generate_password():
-    return f"wins{random.randint(100, 999)}"
+    return f"babeh@{random.randint(100, 999)}"
 
 def get_field(text, names):
     lines = text.splitlines()
@@ -276,7 +276,7 @@ async def register_member(data):
                 print("REG STEP 7: duplicate phone", flush=True)
                 return "duplicate_phone", data["password"]
 
-            if "viralmulu.xyz/" in page.url and "register" not in page.url:
+            if "babehku9.xyz/" in page.url and "register" not in page.url:
                 print("REG STEP 7: url sudah keluar register, tambah rekening", flush=True)
                 await add_rekening(page, data)
                 return "success", data["password"]
@@ -296,29 +296,23 @@ async def register_member(data):
             await browser.close()
 
 def success_message(username, password):
-    return f"""Hai kak. 𝐈𝐃 𝐋𝐈𝐆𝐀𝐍𝐀𝐓𝐈𝐎𝐍 Kaka sudah di daftarkan.
-Untuk member baru berkesempatan dapat 𝐌𝐀𝐗𝐖𝐈𝐍 𝐁𝐄𝐑𝐔𝐍𝐓𝐔𝐍, Langsung 𝐋𝐎𝐆𝐈𝐍 & 𝐃𝐄𝐏𝐎𝐒𝐈𝐓 ya 😉
+    return f"""Akun 𝐁𝐀𝐁𝐄𝐇𝐖𝐈𝐍 sudah siap digunakan ya Kak, silahkan di coba untuk login. Terima kasih 😉
 
-𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞 : {username}
-𝐏𝐚𝐬𝐬𝐰𝐨𝐫𝐝 : {password}
+👉🏻 Username : {username}
+👉🏻 Password : {password}
+Jangan lupa ganti password setelah berhasil login !!
 
 PENTING‼️
-SELALU GUNAKAN LINK DIBAWAH SAAT LOG IN
-🌐𝙇𝙄𝙉𝙆 𝙒𝙀𝘽 ⏩ cutt.ly/RoomMAXWIN
-🌐𝙇𝙄𝙉𝙆 𝘼𝙇𝙏𝙀𝙍𝙉𝘼𝙏𝙄𝙁 ⏩ cutt.ly/SlotMAXWIN
+SELALU MENGGUNAKAN LINK DIBAWAH SAAT LOGIN ⬇️
+🌐 cutt.ly/CuanBabehWin
 
-INFO POLA GAME.
-🌐𝙇𝙄𝙉𝙆 𝙏𝙀𝙇𝙀𝙂𝙍𝘼𝙈 ⏩ cutt.ly/RUMUSGACOR
-🌐𝙒𝘼 𝙊𝙁𝙁𝙄𝘾𝙄𝘼𝙇 24 𝙅𝘼𝙈 ⏩ cutt.ly/WA_LIGANATION
+🌐 Link Alternatif : 🔗 cutt.ly/BabehAlternatif
+⚠️Info pola gacor klik 👉: cutt.ly/Contekan_Pola
 
-Untuk mempermudah bermain, silakan download aplikasi kami.
-🌐𝙇𝙄𝙉𝙆 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿 𝘼𝙋𝙆 ⏩ cutt.ly/LiganationAPK
+Untuk mempermudah bermain silahkan download aplikasi kami
+📲 Klik Apk Babehwin : cutt.ly/ApkBabehwin
 
-‼️PENTING‼️
-⚠️ Ganti password anda setelah LOG IN
-⚠️ Selalu CEK rekening DEPOSIT sebelum TRANSFER
-
-𝐃𝐄𝐏𝐎𝐒𝐈𝐓 dan 𝐑𝐀𝐈𝐇 𝐌𝐀𝐗𝐖𝐈𝐍 𝐁𝐄𝐑𝐔𝐍𝐓𝐔𝐍 Mu!!!"""
+WA Official 24 Jam : cutt.ly/Official_Babehwin"""
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
