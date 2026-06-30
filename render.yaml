@@ -1,0 +1,10 @@
+services:
+  - type: worker
+    name: bot-regis
+    env: python
+
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install chromium
+
+    startCommand: python regis.py
